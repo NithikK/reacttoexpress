@@ -8,6 +8,7 @@ function App() {
   const [userid, setUserId] = useState("");
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showResult, setShowResult] = useState(false);
 
   const updateUserId = (event) => {
     setUserId(event.target.value);
@@ -44,6 +45,7 @@ function App() {
                 user.password = modifyPassword(user.password.length);
             });
             setUserData(userData);
+            setShowResult(true);
         })
         .catch((error) => {
             console.error('Error:', error);
@@ -120,18 +122,20 @@ function App() {
         </table>
       </form>
       </div><br/>
-      <div className='result'>
-        <table>
-          <tr>
-            <th>ID</th>
-            <th>Password</th>
-            <th>Email</th>
-          </tr>
-          {data.map((item) => (
-            <tr key={item.userid}><td>{item.userid}</td><td>{item.password}</td><td>{item.emailid}</td></tr>
-          ))}
-        </table>
-      </div>
+      {showResult && (
+          <div className='result'>
+            <table>
+              <tr>
+                <th>ID</th>
+                <th>Password</th>
+                <th>Email</th>
+              </tr>
+              {data.map((item) => (
+                <tr key={item.userid}><td>{item.userid}</td><td>{item.password}</td><td>{item.emailid}</td></tr>
+              ))}
+            </table>
+          </div>
+      )}
     </div>
   );
 }
