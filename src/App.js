@@ -1,7 +1,7 @@
 import './App.css';
 
 import React, { useState } from 'react';
-import axios from 'axios'; // Corrected the import statement
+import axios from 'axios';
 
 function App() {
   const [data, setUserData] = useState([]);
@@ -23,13 +23,11 @@ function App() {
   };
 
   const insertUsers = (event) => {
-    event.preventDefault(); // Prevent form submission and page reload
+    event.preventDefault();
 
     axios.post('http://localhost:9901/insert', { userid:userid, emailid:email, password:password})
       .then((response) => {
-        // Handle the response as needed
         console.log(response.data);
-        // Clear input fields
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -73,9 +71,7 @@ function App() {
     event.preventDefault();
     axios.put('http://localhost:9901/update', { userid:userid, emailid:email, password:password})
       .then((response) => {
-        // Handle the response as needed
         console.log(response.data);
-        // Clear input fields
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -86,9 +82,7 @@ function App() {
     event.preventDefault();
     axios.post('http://localhost:9901/delete', { userid:userid})
       .then((response) => {
-        // Handle the response as needed
         console.log(response.data);
-        // Clear input fields
       })
       .catch((error) => {
         console.error('Error:', error);
