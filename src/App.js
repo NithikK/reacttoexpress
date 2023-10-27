@@ -84,16 +84,16 @@ function App() {
       <form onSubmit={insertUsers} onReset={clear}>
         <table>
           <tr>
-            <th colSpan={2}>User ID</th>
-            <td colSpan={3}><input type="text" value={userid} onChange={updateUserId} /></td>
+            <th>User ID</th>
+            <td colSpan={4}><input type="text" value={userid} onChange={updateUserId} /></td>
           </tr>
           <tr>
-            <th colSpan={2}>Password</th>
-            <td colSpan={3}><input type="password" value={password} onChange={updatePassword} /></td>
+            <th>Password</th>
+            <td colSpan={4}><input type="password" value={password} onChange={updatePassword} /></td>
           </tr>
           <tr>
-            <th colSpan={2}>Email ID</th>
-            <td colSpan={3}><input type="text" value={email} onChange={updateEmail} /></td>
+            <th>Email ID</th>
+            <td colSpan={4}><input type="text" value={email} onChange={updateEmail} /></td>
           </tr>
           <tr>
             <td><button type="submit">Add</button></td>
