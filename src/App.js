@@ -37,13 +37,28 @@ function App() {
 
   function fetchdata() {
     axios.get('http://localhost:9901/getAll')
-      .then((response) => {
-        setUserData(response.data);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+        .then((response) => {
+            const userData = response.data;
+            userData.forEach(user => {
+                user.hidden = user.password;
+                user.password = modifyPassword(user.password.length);
+            });
+            setUserData(userData);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
   }
+
+  function modifyPassword(length) {
+    var hide = "";
+    for(var i = 0; i <= length; i++) {
+        hide += "*";
+    }
+    return hide;
+  }
+
+
   
 
   function clear(){
