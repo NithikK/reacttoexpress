@@ -1,0 +1,43 @@
+.result > table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.result > table tr, .result > table th, .result > table td {
+  border: 2px solid white;
+}
+.App {
+  background: #8e2de2; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #4a00e0, #8e2de2); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #4a00e0, #8e2de2);
+  display: block;
+  justify-content: center;
+  align-items: center;
+  height: 130vh;
+}
+
+.Form {
+  border: 1px solid white;
+  box-shadow: 1px 1px 100px 10px rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 40px;
+  text-align: center;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10% 0% 36% 36%;
+  margin-bottom: 20px;
+}
+
+.result {
+  border: 1px solid white;
+  box-shadow: 1px 1px 100px 10px rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 40px;
+  text-align: center;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0% 0% 36% 36%;
+  margin-bottom: 20px;
+}
