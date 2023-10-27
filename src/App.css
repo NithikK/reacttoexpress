@@ -5,11 +5,11 @@
 
 .result > table tr, .result > table th, .result > table td {
   border: 2px solid white;
-  transition: background-color 0.3s ease; /* Add transition for smoother hover effect */
+  transition: background-color 0.3s ease;
 }
 
 .result > table tr:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* Highlight row on hover */
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .App {
