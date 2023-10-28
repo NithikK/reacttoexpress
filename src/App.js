@@ -28,6 +28,8 @@ function App() {
     axios.post('http://localhost:9901/insert', { userid:userid, emailid:email, password:password})
       .then((response) => {
         console.log(response.data);
+        clear();
+        fetchdata();
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -58,8 +60,11 @@ function App() {
     return hide;
   }
 
-
-  
+  function Details(user) {
+    return function() {
+      window.alert("UserId: " + user.userid + "\nPassword: " + user.hidden + "\nEmailID: " + user.emailid);
+    };
+  }
 
   function clear(){
     setUserId('');
@@ -72,6 +77,8 @@ function App() {
     axios.put('http://localhost:9901/update', { userid:userid, emailid:email, password:password})
       .then((response) => {
         console.log(response.data);
+        clear();
+        fetchdata();
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -83,6 +90,8 @@ function App() {
     axios.post('http://localhost:9901/delete', { userid:userid})
       .then((response) => {
         console.log(response.data);
+        clear();
+        fetchdata();
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -125,7 +134,7 @@ function App() {
                 <th>Email</th>
               </tr>
               {data.map((item) => (
-                <tr key={item.userid}><td>{item.userid}</td><td>{item.password}</td><td>{item.emailid}</td></tr>
+                <tr key={item.userid}><td>{item.userid}</td><td>{item.password}</td><td>{item.emailid}</td><td><button type='button' onClick={Details(item)}>Details</button></td></tr>
               ))}
             </table>
           </div>
