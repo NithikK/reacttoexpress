@@ -131,6 +131,7 @@ function App() {
               <th>ID</th>
               <th>Password</th>
               <th>Email</th>
+              <th></th>
             </tr>
             {data.map((item) => (
               <tr key={item.userid}><td>{item.userid}</td><td>{item.password}</td><td>{item.emailid}</td><td><button type='button' onClick={Details(item)}>Details</button></td></tr>
